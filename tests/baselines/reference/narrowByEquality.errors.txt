@@ -69,3 +69,10 @@ tests/cases/compiler/narrowByEquality.ts(54,9): error TS2322: Type 'string | num
         return 0;
     }
     
+    // From issue #32798
+    declare let xUnknown: unknown
+    
+    if (xUnknown == null) {
+        xUnknown;
+    }
+    

@@ -130,3 +130,16 @@ function test(level: number | string):number {
 >0 : 0
 }
 
+// From issue #32798
+declare let xUnknown: unknown
+>xUnknown : unknown
+
+if (xUnknown == null) {
+>xUnknown == null : boolean
+>xUnknown : unknown
+>null : null
+
+    xUnknown;
+>xUnknown : null | undefined
+}
+

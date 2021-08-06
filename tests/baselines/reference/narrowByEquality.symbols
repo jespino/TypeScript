@@ -111,3 +111,14 @@ function test(level: number | string):number {
     return 0;
 }
 
+// From issue #32798
+declare let xUnknown: unknown
+>xUnknown : Symbol(xUnknown, Decl(narrowByEquality.ts, 59, 11))
+
+if (xUnknown == null) {
+>xUnknown : Symbol(xUnknown, Decl(narrowByEquality.ts, 59, 11))
+
+    xUnknown;
+>xUnknown : Symbol(xUnknown, Decl(narrowByEquality.ts, 59, 11))
+}
+

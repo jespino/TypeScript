@@ -57,3 +57,10 @@ function test(level: number | string):number {
     }
     return 0;
 }
+
+// From issue #32798
+declare let xUnknown: unknown
+
+if (xUnknown == null) {
+    xUnknown;
+}
